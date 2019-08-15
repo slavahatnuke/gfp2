@@ -43,17 +43,23 @@ workflows:
   build_test_deploy:
     jobs:
       - build
-      - test
+      - test:
+          requires:
+            - build
       - deploy_staging:
-          - filters:
-              branches:
-                only:
-                  - master
+          requires:
+            - test
+          filters:
+            branches:
+              only:
+                - master
       - deploy_production:
-          - filters:
-              branches:
-                only:
-                  - prod
+          requires:
+            - test
+          filters:
+            branches:
+              only:
+                - prod
 
 #
 #jobs:
