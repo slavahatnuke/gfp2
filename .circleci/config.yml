@@ -33,7 +33,6 @@ jobs:
     steps:
       - checkout
       - run: echo "test"
-#      - run: curl http://asdasdsalasdlasdl.adsosadoodasosad
   deploy_staging:
     docker:
       - image: node:12
