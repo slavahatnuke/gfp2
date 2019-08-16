@@ -44,7 +44,7 @@ jobs:
           command: |
             echo "Staging deployment..."
             echo "Then Hook GFP: staging"
-            GFP_DEPLOYMENT_ENVIRONMENT=staging; wget -qO- --post-data="{\"branch\":\"${CIRCLE_BRANCH}\", \"environment\":\"${GFP_DEPLOYMENT_ENVIRONMENT}\" }" --header='Content-Type:application/json' 'https://slavagitproflow.localtunnel.me/deployment/webhook/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNsYXZhaGF0bnVrZSIsInJlcG8iOiJzbGF2YWhhdG51a2UvZ2ZwMiIsInNlcnZpY2UiOiJnaXRodWIiLCJpYXQiOjE1NjU2MTQ3OTUsImV4cCI6MjE5Njc2Njc5NX0.q4oucbcCiBgu2cwXj3B5OxzI0770WXX1Q6eeOHzJrD4';
+            GFP_DEPLOYMENT_ENVIRONMENT=staging; wget -qO- --post-data="{\"branch\":\"${CIRCLE_BRANCH}\", \"environment\":\"${GFP_DEPLOYMENT_ENVIRONMENT}\" }" --header='Content-Type:application/json' 'https://slavagitproflow.serveo.net/deployment/webhook/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNsYXZhaGF0bnVrZSIsInJlcG8iOiJzbGF2YWhhdG51a2UvZ2ZwMiIsInNlcnZpY2UiOiJnaXRodWIiLCJpYXQiOjE1NjU5Nzg4NTIsImV4cCI6MjE5NzEzMDg1Mn0.gUAV0g1IfxuCSN68YdUu3D4iSV_gJSQ3zD7KspH9EFc' --content-on-error=on;
   deploy_production:
     docker:
       - image: node:12
@@ -56,22 +56,4 @@ jobs:
           command: |
             echo "Production deployment..."
             echo "Then Hook GFP: production"
-            GFP_DEPLOYMENT_ENVIRONMENT=production; wget -qO- --post-data="{\"branch\":\"${CIRCLE_BRANCH}\", \"environment\":\"${GFP_DEPLOYMENT_ENVIRONMENT}\" }" --header='Content-Type:application/json' 'https://slavagitproflow.localtunnel.me/deployment/webhook/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNsYXZhaGF0bnVrZSIsInJlcG8iOiJzbGF2YWhhdG51a2UvZ2ZwMiIsInNlcnZpY2UiOiJnaXRodWIiLCJpYXQiOjE1NjU2MTQ3OTUsImV4cCI6MjE5Njc2Njc5NX0.q4oucbcCiBgu2cwXj3B5OxzI0770WXX1Q6eeOHzJrD4';
-
-
-#jobs:
-#  build:
-#    docker:
-#      - image: node:12
-#    steps:
-#      - checkout
-#      - run: echo "run-tests.sh"
-#      - deploy:
-#          name: Staging
-#          command: |
-#            GFP_DEPLOYMENT_ENVIRONMENT=staging; wget -qO- --post-data="{\"branch\":\"${CIRCLE_BRANCH}\", \"environment\":\"${GFP_DEPLOYMENT_ENVIRONMENT}\" }" --header='Content-Type:application/json' 'https://slavagitproflow.localtunnel.me/deployment/webhook/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNsYXZhaGF0bnVrZSIsInJlcG8iOiJzbGF2YWhhdG51a2UvZ2ZwMiIsInNlcnZpY2UiOiJnaXRodWIiLCJpYXQiOjE1NjU2MTQ3OTUsImV4cCI6MjE5Njc2Njc5NX0.q4oucbcCiBgu2cwXj3B5OxzI0770WXX1Q6eeOHzJrD4';
-#
-#      - deploy:
-#          name: Production
-#          command: |
-#            GFP_DEPLOYMENT_ENVIRONMENT=production; wget -qO- --post-data="{\"branch\":\"${CIRCLE_BRANCH}\", \"environment\":\"${GFP_DEPLOYMENT_ENVIRONMENT}\" }" --header='Content-Type:application/json' 'https://slavagitproflow.localtunnel.me/deployment/webhook/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNsYXZhaGF0bnVrZSIsInJlcG8iOiJzbGF2YWhhdG51a2UvZ2ZwMiIsInNlcnZpY2UiOiJnaXRodWIiLCJpYXQiOjE1NjU2MTQ3OTUsImV4cCI6MjE5Njc2Njc5NX0.q4oucbcCiBgu2cwXj3B5OxzI0770WXX1Q6eeOHzJrD4';
+            GFP_DEPLOYMENT_ENVIRONMENT=production; wget -qO- --post-data="{\"branch\":\"${CIRCLE_BRANCH}\", \"environment\":\"${GFP_DEPLOYMENT_ENVIRONMENT}\" }" --header='Content-Type:application/json' 'https://slavagitproflow.serveo.net/deployment/webhook/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNsYXZhaGF0bnVrZSIsInJlcG8iOiJzbGF2YWhhdG51a2UvZ2ZwMiIsInNlcnZpY2UiOiJnaXRodWIiLCJpYXQiOjE1NjU5Nzg4NTIsImV4cCI6MjE5NzEzMDg1Mn0.gUAV0g1IfxuCSN68YdUu3D4iSV_gJSQ3zD7KspH9EFc' --content-on-error=on;
